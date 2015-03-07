@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rough Draft New Portfolio Site</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- css needs to be moved to separate file -->
+    <style>
+        body {
+            /*background-image: url('../../Desktop/my_portfolio/jpabico.github.io/images/thinker.jpg');*/
+        }
+
+        .main {
+            width: 95%;
+        }
+
+        #jon {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #title {
+            font-size: 15px;
+        }
+
+        #instructions {
+            font-size: 12px;
+            color: green;
+            text-align: center;
+        }
+
+        .col-md-6 {
+            /*border: solid blue;*/
+            height: 90%;
+            padding: 10px;
+        }
+
+        .col-md-4 {
+            /*border:solid pink;*/
+            /*height: 90%;*/
+            margin-top: 25px;
+        }
+
+        .thumbnails  .row {
+            /*border: solid yellow; */
+            margin: 0 auto;
+       }
+
+    /*   .thumbnail {
+            margin: auto;
+       }*/
+
+         .col-md-8 {
+            /*border:solid red;*/
+            padding: 25px;
+            margin-top: 25px;
+        }
+
+        .col-md-12 {
+            border:solid green;
+            padding: 15px;
+            margin: 30px;
+        }
+
+        .main-pic {
+            /*border: solid purple;*/
+            width: auto;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .myheading {
+            /*border: solid orange;*/
+        }
+
+    </style>
+    <!-- css needs to be moved to separate file -->
+
+  </head>
+  <body>
+    <div class='container'>
+        <div class="row main">
+          
+          <!-- start of left_hand column -->
+          <div class="col-md-8">
+
+                <!-- screenshot of active app -->
+                <div class='main-pic'>
+                    <img id='peaches' src='../../Desktop/peaches.jpg' />
+                </div>
+
+                <!-- tabs and descriptions -->
+               <div class="row main">
+                    <div class="col-md-12">
+                        
+
+                        <div role="tabpanel">
+
+                              <!-- Nav tabs -->
+                              <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
+                                <li role="presentation"><a href="#features" aria-controls="features" role="tab" data-toggle="tab">Features</a></li>
+                                <li role="presentation"><a href="#technology" aria-controls="technology" role="tab" data-toggle="tab">Technology</a></li>
+                              </ul>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="description">Description</div>
+                                <div role="tabpanel" class="tab-pane" id="features">Features</div>
+                                <div role="tabpanel" class="tab-pane" id="technology">Technology</div>
+                              </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+          </div>
+          <!-- end of left-hand column -->
+
+          <!-- start of right-hand column -->
+          <div class="col-md-4">
+
+                <!-- name and heading -->
+                <div class='myheading'>
+                    <h1 id='jon'>
+                        Jon Pabico
+                        <footer id='title'>Full-Stack Web Developer</footer>
+                    </h1>
+                        <h2 id='instructions'>Click on a thumbnail for more info</h2>
+                </div>
+
+                    <!-- thumbnails for each app -->
+                <div class='thumbnails'>
+
+                    <div class="row main">
+                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg' /></div>
+                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/jury_landing_page.jpg' /></div>
+                    </div>
+                    <div class="row main">
+                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/letterstream_pic.jpg' /></div>
+                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/tumblr-clone-dbc.jpg' /></div>
+                    </div>
+                    <div class="row main">
+                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/connect-4.jpg' /></div>
+                        <div class="col-md-6"><img id='peaches' src='../../pabicode/jpabico.github.io/images/snoopy3.jpg' /></div>
+                    </div>
+
+                   
+                         
+
+                </div>
+
+          </div>
+          <!-- end of right-hand column -->
+
+        </div>
+    </div>
+  </body>
+</html>
