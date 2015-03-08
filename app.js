@@ -56,7 +56,7 @@ var app = angular.module("myapp", [])
             images: ['../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg'],
             description_text: " ",
             features_text: " ",
-            technology_text: " ",            
+            technology_text: ["Javascript", "Angular.js", "jQuery/AJAX", "HTML5", "CSS3", "APIs (Firebase, Twilio, Zapier)"],
             url: "http://google.com"
         }, 
         {
@@ -80,7 +80,7 @@ var app = angular.module("myapp", [])
             images: ['images/rsz_tumblr-clone-dbc.jpg'],
             description_text: "Tumblr-Clone is a social neworking app modeled after the Tumblr platform.  This was built as a personal project and used for instructional purposes to teach others how to develop web apps.",
             features_text: ["Blog about daily events", "Post multimedia content", "Follow other users", "Share your experiences!"],
-            technology_text: ["Ruby on Rails", "Ruby", "Javascript", "Bootstrap", "HTML5", "CSS3", "Active Record"]
+            technology_text: ["Ruby on Rails", "Ruby", "Javascript", "Bootstrap", "HTML5", "CSS3", "Active Record"],
             url: "http://tumblr-clone-dbc.herokuapp.com"
         },
         {
@@ -95,8 +95,8 @@ var app = angular.module("myapp", [])
             name: "Quest", 
             images: ['images/rsz_quest_pic.jpg'],
             description_text: "Currently under construction, Quest (QUiz-tEST) allows students to prepare one another for their exams.  Also, teachers can spy, er I mean... see the activity of the students and use the information to plan and design lessons and review sessions.",
-            features_text: [],
-            technology_text: ["Ruby on Rails", "Ruby", "Javascript", "jQuery/AJAX", "HTML5", "CSS3", "APIs (YouTube, Twitter)", "Active Record"]
+            features_text: ["Write questions and provide answers to classmates", "Send your questions to your classmates via Twitter", "Review your progress and see which questions you missed (and got correct!)", "Teachers can also view the activity and results"],
+            technology_text: ["Ruby on Rails", "Ruby", "Javascript", "jQuery/AJAX", "HTML5", "CSS3", "APIs (YouTube, Twitter)", "Active Record"],
             url: "#"
         }
     ];

@@ -16,6 +16,10 @@ body {
             font-size: 20px;
         }
 
+        #cv {
+            font-size: 12px;
+        }
+
         #instructions {
             font-size: 15px;
             color: green;
@@ -65,7 +69,9 @@ body {
             height: auto;
         }
 
-        .myheading {
+        .myheading:hover{
+            color: white;
+            background-color: navy;
             border: solid orange;
         }
 
