@@ -69,6 +69,16 @@ body {
             border: solid orange;
         }
 
-        h2 a p {
+        h2.visitors {
             text-align: center;
+            vertical-align: text-top;
         }
+
+        h2.visitors a:hover , .visitme:hover {
+            color: white;
+            background-color: navy;
+        }
+
+    
+
+       

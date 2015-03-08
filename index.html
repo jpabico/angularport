@@ -47,11 +47,13 @@
                     <div class="col-md-12">
 
                     <!-- link to active app -->
-                    <h2>
-                        <a href="{{big.getAppUrl(big.appClickNum)}}">
-                            <p>{{big.getAppName(big.appClickNum)}}</p>
-                        </a>
-                    </h2>
+                    <div class='visitme'>
+                        <h2 class='visitors'>
+                            <a href="{{big.getAppUrl(big.appClickNum)}}">
+                                <p>{{big.getAppName(big.appClickNum)}}</p>
+                            </a>
+                        </h2>
+                    </div>
 
                     <!-- tabs and panes -->
                     <section ng-controller="PanelController as panel">
@@ -135,11 +137,9 @@
 <!-- highlight currently active app in gallery -->
 <!-- background color or image -->
 <!-- fix size of tab panels (by height?) -->
-<!-- separate into separate files -->
 <!-- refactor controllers ...some things are not categorized properly -->
 <!-- make sure all images are the same size -->
 <!-- contact section should have link to resume  -->
 <!-- edit and proofread all texts, labels, and descriptions -->
 <!-- move data (myAppsInfo) to firebase ...reference angular course-->
 <!-- host on firebase or github? -->
-<!-- add more comments in code -->
