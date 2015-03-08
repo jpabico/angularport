@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rough Draft New Portfolio Site</title>
 
+    <!-- layout.css file -->
+    <link rel="stylesheet" type="text/css" href="layout.css">
+
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -23,94 +26,13 @@
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
 
-    <!-- css needs to be moved to separate file -->
-
-    <style>
-        body {
-            /*background-image: url('  ');*/
-            /*background-color:  lightblue;*/
-        }
-
-        .main {
-            width: 95%;
-        }
-
-        #jon {
-            font-size: 48px;
-            text-align: center;
-        }
-
-        #title {
-            font-size: 20px;
-        }
-
-        #instructions {
-            font-size: 15px;
-            color: green;
-            text-align: center;
-        }
-
-        .col-md-6 {
-            border: solid blue;
-            height: 90%;
-            padding: 10px;
-        }
-
-        .col-md-4 {
-            border:solid pink;
-            margin-top: 25px;
-        }
-
-        .thumbnails  .row {
-            border: solid yellow; 
-            margin: 0 auto;
-       }
-
-         .col-md-8 {
-            border:solid red;
-            padding: 25px;
-            margin-top: 25px;
-        }
-
-        .col-md-12 {
-            border:solid green;
-            padding: 15px;
-            margin: 30px;
-        }
-
-        .main-pic-container {
-            border: solid black;
-            height: 80%;
-        }
-
-        .main-pic {
-            border: solid purple;
-            width: auto;
-        }
-
-        .container img {
-            width: 100%;
-            height: auto;
-        }
-
-        .myheading {
-            border: solid orange;
-        }
-
-        h2 a p {
-            text-align: center;
-        }
-
-
-    </style>
-    <!-- css needs to be moved to separate file -->
-
   </head>
   <body ng-controller='BigController as big'>
+
     <div class='container'>
         <div class="row main">
           
-          <!-- start of left_hand column -->
+          <!-- start of left-hand column -->
           <div class="col-md-8">
 
                 <!-- screenshot of active app -->
@@ -119,48 +41,48 @@
                         <img id='peaches' ng-src='{{big.getAppImage(big.appClickNum)}}' />
                     </div>
                 </div>
-                <!-- tabs and descriptions -->
+
+                <!--start of tabs and descriptions inside left-hand column-->
                <div class="row main">
                     <div class="col-md-12">
-                        
 
-                              <!-- Tab panes -->
-                            
+                    <!-- link to active app -->
+                    <h2>
+                        <a href="{{big.getAppUrl(big.appClickNum)}}">
+                            <p>{{big.getAppName(big.appClickNum)}}</p>
+                        </a>
+                    </h2>
 
-<h2><a href="{{big.getAppUrl(big.appClickNum)}}"><p>{{big.getAppName(big.appClickNum)}}</p></a></h2>
-<section ng-controller="PanelController as panel">
-    <ul class="nav nav-pills">
-        <li role="presentation" ng-class="{active: panel.isSelected(1) }">
-            <a href ng-click="panel.selectTab(1)">Description</a>
-        </li>
-
-        <li role="presentation" ng-class="{active: panel.isSelected(2) }">
-            <a href ng-click="panel.selectTab(2)">Features</a>
-        </li>
-
-        <li role="presentation" ng-class="{active: panel.isSelected(3) }">
-            <a href ng-click="panel.selectTab(3)">Technology</a>
-        </li>
-    </ul>
-    <br/>
-    <div class="panel" ng-show="panel.isSelected(1)">
-        <!-- <h2>{{big.getAppName(big.appClickNum)}}</h2> -->
-        <p>{{big.getAppDescription(big.appClickNum)}}</p>
-    </div>
-    <div class="panel" ng-show="panel.isSelected(2)">
-        <!-- <h2>{{big.getAppName(big.appClickNum)}}</h2> -->
-        <p>{{big.getAppFeatures(big.appClickNum)}}</p>
-    </div>
-    <div class="panel" ng-show="panel.isSelected(3)">
-        <!-- <h2>{{big.getAppName(big.appClickNum)}}</h2> -->
-        <p>{{big.getAppTechnology(big.appClickNum)}}</p>
-    </div>
-</section>
-
-
+                    <!-- tabs and panes -->
+                    <section ng-controller="PanelController as panel">
+                        <!-- tabs -->
+                        <ul class="nav nav-pills">
+                            <li role="presentation" ng-class="{active: panel.isSelected(1) }">
+                                <a href ng-click="panel.selectTab(1)">Description</a>
+                            </li>
+                            <li role="presentation" ng-class="{active: panel.isSelected(2) }">
+                                <a href ng-click="panel.selectTab(2)">Features</a>
+                            </li>
+                            <li role="presentation" ng-class="{active: panel.isSelected(3) }">
+                                <a href ng-click="panel.selectTab(3)">Technology</a>
+                            </li>
+                        </ul>
+                        <br/>
+                        <!-- panes -->
+                        <div class="panel" ng-show="panel.isSelected(1)">
+                            <p>{{big.getAppDescription(big.appClickNum)}}</p>
+                        </div>
+                        <div class="panel" ng-show="panel.isSelected(2)">
+                            <p>{{big.getAppFeatures(big.appClickNum)}}</p>
+                        </div>
+                        <div class="panel" ng-show="panel.isSelected(3)">
+                            <p>{{big.getAppTechnology(big.appClickNum)}}</p>
+                        </div>
+                    </section>
 
                     </div>
                 </div>
+                <!--end of tabs and descriptions inside left-hand column-->
 
           </div>
           <!-- end of left-hand column -->
@@ -174,28 +96,25 @@
                         Jon Pabico
                         <footer id='title'>Full-Stack Web Developer</footer>
                     </h1>
-                        <h2 id='instructions'>Click on a thumbnail for more info</h2>
+                    <h2 id='instructions'>Click on a thumbnail for more info</h2>
                 </div>
 
-                    <!-- thumbnails for each app -->
+                <!-- thumbnails for each app -->
                 <div class='thumbnails' ng-controller='GalleryController as gallery'>
-
                     <div class="row main" >
                         <div class="col-md-6" ng-click="big.appClickNum = 0"><img id='peaches' ng-src="{{big.getAppImage(0)}}" />img1</div>
                         <div class="col-md-6" ng-click="big.appClickNum = 1"><img id='peaches' ng-src="{{big.getAppImage(1)}}" />img2</div>
                     </div>
+
                     <div class="row main">
                         <div class="col-md-6" ng-click="big.appClickNum = 2"><img id='peaches' ng-src= "{{big.getAppImage(2)}}"/>img3</div>
                         <div class="col-md-6" ng-click="big.appClickNum = 3"><img id='peaches' ng-src="{{big.getAppImage(3)}}" />img4</div>
                     </div>
+
                     <div class="row main">
                         <div class="col-md-6" ng-click="big.appClickNum = 4"><img id='peaches' ng-src="{{big.getAppImage(4)}}" />img5</div>
                         <div class="col-md-6" ng-click="big.appClickNum = 5"><img id='peaches' ng-src="{{big.getAppImage(5)}}" />img6</div>
                     </div>
-
-                   
-                         
-
                 </div>
 
           </div>
@@ -204,116 +123,8 @@
         </div>
     </div>
 
-
-
-<!-- Angular module -->
-<script>
-var app = angular.module("myapp", [])
-    
-    app.controller("BigController", function($scope) {
-        this.stuff = myAppsInfo;
-        this.appClickNum = 0;
-
-        this.getAppImage = function(appIndex) {
-            return this.stuff[appIndex].images[0];
-        };
-
-        this.getAppName = function(appIndex) {
-            return this.stuff[appIndex].name;
-        };
-
-        this.getAppDescription = function(appIndex) {
-            return this.stuff[appIndex].description_text;
-        };
-
-        this.getAppFeatures = function(appIndex) {
-            return this.stuff[appIndex].features_text;
-        };
-
-        this.getAppTechnology = function(appIndex) {
-            return this.stuff[appIndex].technology_text;
-        };
-
-        this.getAppUrl = function(appIndex) {
-            return this.stuff[appIndex].url;
-        };
-
-    });
-
-    app.controller("PanelController", function($scope) {
-        this.tab = 1;
-
-        this.selectTab = function(setTab) {
-            this.tab = setTab;
-        };
-
-        this.isSelected = function(checkTab) {
-            return this.tab === checkTab
-        };
-
-    } );
-    
-    app.controller("GalleryController", function($scope) {
-        this.verycurrent = 0;
-        this.setVeryCurrent = function(pickThisApp) {
-            this.veryCurrent = pickThisApp || 0;
-        };
-    });
-
-    var myAppsInfo = [
-        {
-            name: "quest", 
-            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg'],
-            description_text: "this is the description text.  it is expected be a long paragraph.  this is filler text. so blah blah blah, and hum hum hum. i got a ticket for the long way round. to bottles of whish along the way. and i sure would like some sweet company, and i'm leaving tomorrow what do you say?",
-            features_text: "maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again.",
-            technology_text: "it would be nice to show icons here, but for now, let's just say it's a short list of common technologies.  i don't expect this paragraph to be very long at all.",
-            url: "http://google.com"
-        }, 
-        {
-            name: "Jury", 
-            images: ['images/rsz_jury_landing_page.jpg'],
-            description_text: "this is the description text.  it is expected be a long paragraph.  this is filler text. so blah blah blah, and hum hum hum. i got a ticket for the long way round. to bottles of whish along the way. and i sure would like some sweet company, and i'm leaving tomorrow what do you say?",
-            features_text: "maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again.",
-            technology_text: "it would be nice to show icons here, but for now, let's just say it's a short list of common technologies.  i don't expect this paragraph to be very long at all.",
-            url: "http://google.com"
-        },
-        {
-            name: "Letter Stream", 
-            images: ['images/rsz_letterstream_pic.jpg'],
-            description_text: "this is the description text.  it is expected be a long paragraph.  this is filler text. so blah blah blah, and hum hum hum. i got a ticket for the long way round. to bottles of whish along the way. and i sure would like some sweet company, and i'm leaving tomorrow what do you say?",
-            features_text: "maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again.",
-            technology_text: "it would be nice to show icons here, but for now, let's just say it's a short list of common technologies.  i don't expect this paragraph to be very long at all.",
-            url: "http://google.com"
-        },
-        {
-            name: "Tumblr-Clone", 
-            images: ['images/rsz_tumblr-clone-dbc.jpg'],
-            description_text: "this is the description text.  it is expected be a long paragraph.  this is filler text. so blah blah blah, and hum hum hum. i got a ticket for the long way round. to bottles of whish along the way. and i sure would like some sweet company, and i'm leaving tomorrow what do you say?",
-            features_text: "maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again.",
-            technology_text: "it would be nice to show icons here, but for now, let's just say it's a short list of common technologies.  i don't expect this paragraph to be very long at all.",
-            url: "http://google.com"
-        },
-        {
-            name: "Connect 4", 
-            images: ['images/rsz_connect-4.jpg'],
-            description_text: "this is the description text.  it is expected be a long paragraph.  this is filler text. so blah blah blah, and hum hum hum. i got a ticket for the long way round. to bottles of whish along the way. and i sure would like some sweet company, and i'm leaving tomorrow what do you say?",
-            features_text: "maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again.",
-            technology_text: "it would be nice to show icons here, but for now, let's just say it's a short list of common technologies.  i don't expect this paragraph to be very long at all.",
-            url: "http://google.com"
-        },
-        {
-            name: "Quest", 
-            images: ['images/rsz_quest_pic.jpg'],
-            description_text: "this is the description text.  it is expected be a long paragraph.  this is filler text. so blah blah blah, and hum hum hum. i got a ticket for the long way round. to bottles of whish along the way. and i sure would like some sweet company, and i'm leaving tomorrow what do you say?",
-            features_text: "maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again. maybe i'll make this a list of things that are featured in the app.  but for now, text is fine.  copy and paste these paragraphs again.",
-            technology_text: "it would be nice to show icons here, but for now, let's just say it's a short list of common technologies.  i don't expect this paragraph to be very long at all.",
-            url: "http://google.com"
-        }
-    ];
-
-</script>
-
-
+    <!-- Angular module -->
+    <script type="text/javascript" src='app.js'></script>
 
   </body>
 </html>

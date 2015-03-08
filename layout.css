@@ -1,0 +1,74 @@
+body {
+            /*background-image: url('  ');*/
+            /*background-color:  lightblue;*/
+        }
+
+        .main {
+            width: 95%;
+        }
+
+        #jon {
+            font-size: 48px;
+            text-align: center;
+        }
+
+        #title {
+            font-size: 20px;
+        }
+
+        #instructions {
+            font-size: 15px;
+            color: green;
+            text-align: center;
+        }
+
+        .col-md-6 {
+            border: solid blue;
+            height: 90%;
+            padding: 10px;
+        }
+
+        .col-md-4 {
+            border:solid pink;
+            margin-top: 25px;
+        }
+
+        .thumbnails  .row {
+            border: solid yellow; 
+            margin: 0 auto;
+       }
+
+         .col-md-8 {
+            border:solid red;
+            padding: 25px;
+            margin-top: 25px;
+        }
+
+        .col-md-12 {
+            border:solid green;
+            padding: 15px;
+            margin: 30px;
+        }
+
+        .main-pic-container {
+            border: solid black;
+            height: 80%;
+        }
+
+        .main-pic {
+            border: solid purple;
+            width: auto;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .myheading {
+            border: solid orange;
+        }
+
+        h2 a p {
+            text-align: center;
+        }
