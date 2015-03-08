@@ -12,6 +12,13 @@ body {
             text-align: center;
         }
 
+        #jon:hover {
+            color: white;            
+            background-color: navy;
+        }
+
+
+
         #title {
             font-size: 20px;
         }
@@ -70,8 +77,6 @@ body {
         }
 
         .myheading:hover{
-            color: white;
-            background-color: navy;
             border: solid orange;
         }
 
