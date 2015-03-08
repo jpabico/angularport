@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rough Draft New Portfolio Site</title>
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -17,7 +20,11 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
     <!-- css needs to be moved to separate file -->
+
     <style>
         body {
             /*background-image: url('../../Desktop/my_portfolio/jpabico.github.io/images/thinker.jpg');*/
@@ -93,7 +100,7 @@
     <!-- css needs to be moved to separate file -->
 
   </head>
-  <body>
+  <body ng-app='myapp'>
     <div class='container'>
         <div class="row main">
           
@@ -110,25 +117,60 @@
                     <div class="col-md-12">
                         
 
-                        <div role="tabpanel">
-
+                        <!-- <div role="tabpanel" ng-controller='TabBoxController as tabBox'> -->
                               <!-- Nav tabs -->
-                              <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
-                                <li role="presentation"><a href="#features" aria-controls="features" role="tab" data-toggle="tab">Features</a></li>
-                                <li role="presentation"><a href="#technology" aria-controls="technology" role="tab" data-toggle="tab">Technology</a></li>
-                              </ul>
-
+                              <!-- <h2>Hello {{helloTo.title}}</h2> -->
+                              <!-- <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation">
+                                    <a href="#description" aria-controls="description" role="tab" data-toggle="tab" ng-click="tabBox.setTab(1)">Description</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#features" aria-controls="features" role="tab" data-toggle="tab" ng-click='tabBox.setTab(2)'>Features</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#technology" aria-controls="technology" role="tab" data-toggle="tab" ng-click='tabBox.setTab(5)'>Technology</a>
+                                </li>
+                              </ul> -->
                               <!-- Tab panes -->
-                              <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="description">Description</div>
-                                <div role="tabpanel" class="tab-pane" id="features">Features</div>
-                                <div role="tabpanel" class="tab-pane" id="technology">Technology</div>
-                              </div>
+                            
+                              <!-- <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane" id="description" ng-show='tab===4'><p>This is the Description box</p></div>
+                                <div role="tabpanel" class="tab-pane" id="features" ng-show='tab===5'><p>This is the Features box</p></div>
+                                <div role="tabpanel" class="tab-pane" id="technology" ng-show='tab===6'><p>This is the Technology box</p></div>
+                              </div> -->
 
-                        </div>
+                        <!-- </div> -->
 
+tabby - start
+<section ng-controller="PanelController as panel">
+    <ul class="nav nav-pills">
+        <li role="presentation" ng-class="{active: panel.isSelected(1) }">
+            <a href ng-click="panel.selectTab(1)">Home</a>
+        </li>
 
+        <li role="presentation" ng-class="{active: panel.isSelected(2) }">
+            <a href ng-click="panel.selectTab(2)">Profile</a>
+        </li>
+
+        <li role="presentation" ng-class="{active: panel.isSelected(3) }">
+            <a href ng-click="panel.selectTab(3)">Messages</a>
+        </li>
+    </ul>
+{{tab}}
+    <div class="panel" ng-show="panel.isSelected(1)">
+        <h4>Tab 1 Description</h4>
+        <p>paragraph for tab 1!</p>
+    </div>
+    <div class="panel" ng-show="panel.isSelected(2)">
+        <h4>Tab 2 Things</h4>
+        <p>paragraph for tab 2!</p>
+    </div>
+    <div class="panel" ng-show="panel.isSelected(3)">
+        <h4>Tab 3 Stuff</h4>
+        <p>paragraph for tab 3!</p>
+    </div>
+</section>
+tabby - end
 
 
                     </div>
@@ -175,5 +217,27 @@
 
         </div>
     </div>
+
+
+
+<!-- Angular module -->
+<script>
+angular.module("myapp", [])
+    .controller("PanelController", function($scope) {
+        this.tab = 1;
+
+        this.selectTab = function(setTab) {
+            this.tab = setTab;
+        };
+
+        this.isSelected = function(checkTab) {
+            return this.tab === checkTab
+        };
+
+    } );
+</script>
+
+
+
   </body>
 </html>
