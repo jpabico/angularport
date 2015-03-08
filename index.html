@@ -109,7 +109,7 @@
 
                 <!-- screenshot of active app -->
                 <div class='main-pic'>
-                    <img id='peaches' ng-src='{{big.getAppImage(2)}}' />
+                    <img id='peaches' ng-src='{{big.getAppImage(big.appClickNum)}}' />
                 </div>
 
                 <!-- tabs and descriptions -->
@@ -137,16 +137,16 @@ tabby - start
     </ul>
 
     <div class="panel" ng-show="panel.isSelected(1)">
-        <h2>{{big.getAppName(2)}}</h2>
-        <p>{{big.getAppDescription(2)}}</p>
+        <h2>{{big.getAppName(big.appClickNum)}}</h2>
+        <p>{{big.getAppDescription(big.appClickNum)}}</p>
     </div>
     <div class="panel" ng-show="panel.isSelected(2)">
-        <h2>{{big.getAppName(2)}}</h2>
-        <p>{{big.getAppFeatures(2)}}</p>
+        <h2>{{big.getAppName(big.appClickNum)}}</h2>
+        <p>{{big.getAppFeatures(big.appClickNum)}}</p>
     </div>
     <div class="panel" ng-show="panel.isSelected(3)">
-        <h2>{{big.getAppName(2)}}</h2>
-        <p>{{big.getAppTechnology(2)}}</p>
+        <h2>{{big.getAppName(big.appClickNum)}}</h2>
+        <p>{{big.getAppTechnology(big.appClickNum)}}</p>
     </div>
 </section>
 tabby - end
@@ -173,17 +173,17 @@ tabby - end
                     <!-- thumbnails for each app -->
                 <div class='thumbnails' ng-controller='GalleryController as gallery'>
 
-                    <div class="row main">
-                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(0)}}" />img1</div>
-                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(1)}}" />img2</div>
+                    <div class="row main" >
+                        <div class="col-md-6" ng-click="big.appClickNum = 0"><img id='peaches' ng-src="{{big.getAppImage(0)}}" />img1</div>
+                        <div class="col-md-6" ng-click="big.appClickNum = 1"><img id='peaches' ng-src="{{big.getAppImage(1)}}" />img2</div>
                     </div>
                     <div class="row main">
-                        <div class="col-md-6"><img id='peaches' ng-src= "{{big.getAppImage(2)}}"/>img3</div>
-                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(3)}}" />img4</div>
+                        <div class="col-md-6" ng-click="big.appClickNum = 2"><img id='peaches' ng-src= "{{big.getAppImage(2)}}"/>img3</div>
+                        <div class="col-md-6" ng-click="big.appClickNum = 3"><img id='peaches' ng-src="{{big.getAppImage(3)}}" />img4</div>
                     </div>
                     <div class="row main">
-                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(4)}}" />img5</div>
-                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(5)}}" />img6</div>
+                        <div class="col-md-6" ng-click="big.appClickNum = 4"><img id='peaches' ng-src="{{big.getAppImage(4)}}" />img5</div>
+                        <div class="col-md-6" ng-click="big.appClickNum = 5"><img id='peaches' ng-src="{{big.getAppImage(5)}}" />img6</div>
                     </div>
 
                    
@@ -205,6 +205,7 @@ var app = angular.module("myapp", [])
     
     app.controller("BigController", function($scope) {
         this.stuff = myAppsInfo;
+        this.appClickNum = 0;
 
         this.getAppImage = function(appIndex) {
             return this.stuff[appIndex].images[0];
