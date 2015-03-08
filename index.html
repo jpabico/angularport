@@ -117,57 +117,36 @@
                     <div class="col-md-12">
                         
 
-                        <!-- <div role="tabpanel" ng-controller='TabBoxController as tabBox'> -->
-                              <!-- Nav tabs -->
-                              <!-- <h2>Hello {{helloTo.title}}</h2> -->
-                              <!-- <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation">
-                                    <a href="#description" aria-controls="description" role="tab" data-toggle="tab" ng-click="tabBox.setTab(1)">Description</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#features" aria-controls="features" role="tab" data-toggle="tab" ng-click='tabBox.setTab(2)'>Features</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#technology" aria-controls="technology" role="tab" data-toggle="tab" ng-click='tabBox.setTab(5)'>Technology</a>
-                                </li>
-                              </ul> -->
                               <!-- Tab panes -->
                             
-                              <!-- <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane" id="description" ng-show='tab===4'><p>This is the Description box</p></div>
-                                <div role="tabpanel" class="tab-pane" id="features" ng-show='tab===5'><p>This is the Features box</p></div>
-                                <div role="tabpanel" class="tab-pane" id="technology" ng-show='tab===6'><p>This is the Technology box</p></div>
-                              </div> -->
-
-                        <!-- </div> -->
 
 tabby - start
 <section ng-controller="PanelController as panel">
     <ul class="nav nav-pills">
         <li role="presentation" ng-class="{active: panel.isSelected(1) }">
-            <a href ng-click="panel.selectTab(1)">Home</a>
+            <a href ng-click="panel.selectTab(1)">Description</a>
         </li>
 
         <li role="presentation" ng-class="{active: panel.isSelected(2) }">
-            <a href ng-click="panel.selectTab(2)">Profile</a>
+            <a href ng-click="panel.selectTab(2)">Features</a>
         </li>
 
         <li role="presentation" ng-class="{active: panel.isSelected(3) }">
-            <a href ng-click="panel.selectTab(3)">Messages</a>
+            <a href ng-click="panel.selectTab(3)">Technology</a>
         </li>
     </ul>
-{{tab}}
+
     <div class="panel" ng-show="panel.isSelected(1)">
-        <h4>Tab 1 Description</h4>
-        <p>paragraph for tab 1!</p>
+        <h2>{{big.getAppName(2)}}</h2>
+        <p>{{big.getAppDescription(2)}}</p>
     </div>
     <div class="panel" ng-show="panel.isSelected(2)">
-        <h4>Tab 2 Things</h4>
-        <p>paragraph for tab 2!</p>
+        <h2>{{big.getAppName(2)}}</h2>
+        <p>{{big.getAppFeatures(2)}}</p>
     </div>
     <div class="panel" ng-show="panel.isSelected(3)">
-        <h4>Tab 3 Stuff</h4>
-        <p>paragraph for tab 3!</p>
+        <h2>{{big.getAppName(2)}}</h2>
+        <p>{{big.getAppTechnology(2)}}</p>
     </div>
 </section>
 tabby - end
@@ -230,6 +209,23 @@ var app = angular.module("myapp", [])
         this.getAppImage = function(appIndex) {
             return this.stuff[appIndex].images[0];
         };
+
+        this.getAppName = function(appIndex) {
+            return this.stuff[appIndex].name;
+        };
+
+        this.getAppDescription = function(appIndex) {
+            return this.stuff[appIndex].description_text;
+        };
+
+        this.getAppFeatures = function(appIndex) {
+            return this.stuff[appIndex].features_text;
+        };
+
+        this.getAppTechnology = function(appIndex) {
+            return this.stuff[appIndex].technology_text;
+        };
+
     });
 
     app.controller("PanelController", function($scope) {
@@ -255,27 +251,45 @@ var app = angular.module("myapp", [])
     var myAppsInfo = [
         {
             name: "quest", 
-            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg']
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg'],
+            description_text: "This is my app's description...",
+            features_text: "Let me tell you about it's features...",
+            technology_text: "I used the following technologies..."
         }, 
         {
             name: "jury", 
-            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/jury_landing_page.jpg']
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/jury_landing_page.jpg'],
+            description_text: "This is my app's description...",
+            features_text: "Let me tell you about it's features...",
+            technology_text: "I used the following technologies..."
         },
         {
             name: "letterstream", 
-            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/letterstream_pic.jpg']
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/letterstream_pic.jpg'],
+            description_text: "This is my app's description...",
+            features_text: "Let me tell you about it's features...",
+            technology_text: "I used the following technologies..."
         },
         {
             name: "tumblr-clone", 
-            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/tumblr-clone-dbc.jpg']
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/tumblr-clone-dbc.jpg'],
+            description_text: "This is my app's description...",
+            features_text: "Let me tell you about it's features...",
+            technology_text: "I used the following technologies..."
         },
         {
             name: "connect-4", 
-            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/connect-4.jpg']
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/connect-4.jpg'],
+            description_text: "This is my app's description...",
+            features_text: "Let me tell you about it's features...",
+            technology_text: "I used the following technologies..."
         },
         {
             name: "snoopy3", 
-            images: ['../../pabicode/jpabico.github.io/images/snoopy3.jpg']
+            images: ['../../pabicode/jpabico.github.io/images/snoopy3.jpg'],
+            description_text: "This is my app's description...",
+            features_text: "Let me tell you about it's features...",
+            technology_text: "I used the following technologies..."
         }
     ];
 
