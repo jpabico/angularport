@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='myapp'>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,7 +100,7 @@
     <!-- css needs to be moved to separate file -->
 
   </head>
-  <body ng-app='myapp'>
+  <body ng-controller='BigController as big'>
     <div class='container'>
         <div class="row main">
           
@@ -109,7 +109,7 @@
 
                 <!-- screenshot of active app -->
                 <div class='main-pic'>
-                    <img id='peaches' src='../../Desktop/peaches.jpg' />
+                    <img id='peaches' ng-src='{{big.getAppImage(2)}}' />
                 </div>
 
                 <!-- tabs and descriptions -->
@@ -192,19 +192,19 @@ tabby - end
                 </div>
 
                     <!-- thumbnails for each app -->
-                <div class='thumbnails'>
+                <div class='thumbnails' ng-controller='GalleryController as gallery'>
 
                     <div class="row main">
-                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg' /></div>
-                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/jury_landing_page.jpg' /></div>
+                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(0)}}" />img1</div>
+                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(1)}}" />img2</div>
                     </div>
                     <div class="row main">
-                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/letterstream_pic.jpg' /></div>
-                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/tumblr-clone-dbc.jpg' /></div>
+                        <div class="col-md-6"><img id='peaches' ng-src= "{{big.getAppImage(2)}}"/>img3</div>
+                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(3)}}" />img4</div>
                     </div>
                     <div class="row main">
-                        <div class="col-md-6"><img id='peaches' src='../../Desktop/my_portfolio/jpabico.github.io/images/connect-4.jpg' /></div>
-                        <div class="col-md-6"><img id='peaches' src='../../pabicode/jpabico.github.io/images/snoopy3.jpg' /></div>
+                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(4)}}" />img5</div>
+                        <div class="col-md-6"><img id='peaches' ng-src="{{big.getAppImage(5)}}" />img6</div>
                     </div>
 
                    
@@ -222,8 +222,17 @@ tabby - end
 
 <!-- Angular module -->
 <script>
-angular.module("myapp", [])
-    .controller("PanelController", function($scope) {
+var app = angular.module("myapp", [])
+    
+    app.controller("BigController", function($scope) {
+        this.stuff = myAppsInfo;
+
+        this.getAppImage = function(appIndex) {
+            return this.stuff[appIndex].images[0];
+        };
+    });
+
+    app.controller("PanelController", function($scope) {
         this.tab = 1;
 
         this.selectTab = function(setTab) {
@@ -235,6 +244,41 @@ angular.module("myapp", [])
         };
 
     } );
+    
+    app.controller("GalleryController", function($scope) {
+        this.verycurrent = 0;
+        this.setVeryCurrent = function(pickThisApp) {
+            this.veryCurrent = pickThisApp || 0;
+        };
+    });
+
+    var myAppsInfo = [
+        {
+            name: "quest", 
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg']
+        }, 
+        {
+            name: "jury", 
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/jury_landing_page.jpg']
+        },
+        {
+            name: "letterstream", 
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/letterstream_pic.jpg']
+        },
+        {
+            name: "tumblr-clone", 
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/tumblr-clone-dbc.jpg']
+        },
+        {
+            name: "connect-4", 
+            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/connect-4.jpg']
+        },
+        {
+            name: "snoopy3", 
+            images: ['../../pabicode/jpabico.github.io/images/snoopy3.jpg']
+        }
+    ];
+
 </script>
 
 
