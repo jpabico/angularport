@@ -33,29 +33,33 @@ body {
             text-align: center;
         }
 
-        .col-md-6 {
+        .col-md-5 {
             border: solid blue;
             height: 90%;
             padding: 10px;
-            background-color:white;
+            /*background-color:white;*/
         }
 
-        .col-md-4 {
+        .col-md-3 {
             border:solid pink;
             margin-top: 25px;
-            background-color:pink;
+            margin-left: 10px;
+            /*LightSkyBlue*/
+            background-color: #87CEFA;
         }
 
         .thumbnails  .row {
             border: solid yellow; 
-            margin: 0 auto;
+            margin: 10px auto;
+            padding: 10px;
        }
 
          .col-md-8 {
             border:solid red;
             padding: 25px;
             margin-top: 25px;
-            background-color:red;
+            /*LightSkyBlue*/
+            background-color: #87CEFA;
         }
 
         .col-md-12 {
@@ -97,6 +101,8 @@ body {
     div.panel {
         border: solid purple;
         height: 200px;
+        padding: 10px;
     }
 
        
+       /*color MintCream #F5FFFA*/
