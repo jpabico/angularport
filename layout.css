@@ -33,12 +33,15 @@ body {
             text-align: center;
         }
 
+
+        /*temporarily removed div inside yellow*/
+/*
         .col-md-5 {
             border: solid blue;
             height: 90%;
             padding: 10px;
-            /*background-color:white;*/
-        }
+            background-color:white;
+        }*/
 
         .col-md-3 {
             border:solid pink;
@@ -52,6 +55,7 @@ body {
             border: solid yellow; 
             margin: 10px auto;
             padding: 10px;
+            background-color:white;
        }
 
          .col-md-8 {

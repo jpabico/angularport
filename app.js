@@ -52,7 +52,7 @@ var app = angular.module("myapp", [])
 
     var myAppsInfo = [
         {
-            name: "modified Wait and Eat", 
+            name: "Wait and Eat", 
             images: ['../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg'],
             description_text: " ",
             features_text: " ",
