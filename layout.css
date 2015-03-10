@@ -1,5 +1,5 @@
 body {
-            /*background-image: url('  ');*/
+            background-image: url('images/marioland_background.jpg');
             /*background-color:  lightblue;*/
         }
 
@@ -37,11 +37,13 @@ body {
             border: solid blue;
             height: 90%;
             padding: 10px;
+            background-color:white;
         }
 
         .col-md-4 {
             border:solid pink;
             margin-top: 25px;
+            background-color:pink;
         }
 
         .thumbnails  .row {
@@ -53,12 +55,14 @@ body {
             border:solid red;
             padding: 25px;
             margin-top: 25px;
+            background-color:red;
         }
 
         .col-md-12 {
             border:solid green;
             padding: 15px;
             margin: 30px;
+            background-color: white;
         }
 
         .main-pic-container {
@@ -90,6 +94,9 @@ body {
             background-color: navy;
         }
 
-    
+    div.panel {
+        border: solid purple;
+        height: 200px;
+    }
 
        
