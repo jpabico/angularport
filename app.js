@@ -8,6 +8,11 @@ var app = angular.module("myapp", [])
             return $scope.appClickNum = appIndex;
         };
 
+        this.getAppImageMain = function(appIndex) {
+            // PanelController.testing(3);
+            return $scope.stuff[appIndex].images[0];
+        };
+
         this.getAppImage = function(appIndex) {
             return $scope.stuff[appIndex].images[0];
         };
@@ -45,6 +50,10 @@ var app = angular.module("myapp", [])
             return this.tab === checkTab
         };
 
+        // this.testing = function(number) {
+        //     console.log(number)
+        // }
+
     } );
     
     app.controller("GalleryController", function($scope) {
@@ -57,7 +66,7 @@ var app = angular.module("myapp", [])
     var myAppsInfo = [
         {
             name: "Wait and Eat", 
-            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg'],
+            images: ['images/resz_quest_pic.jpg'],
             description_text: " placeholder for now",
             features_text: [" "],
             technology_text: ["Javascript", "Angular.js", "jQuery/AJAX", "HTML5", "CSS3", "APIs (Firebase, Twilio, Zapier)"],

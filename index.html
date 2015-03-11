@@ -84,14 +84,22 @@
                         </ul>
                         <br/>
                         <!-- panes -->
-                        <div class="panel" ng-show="panel.isSelected(1)">
+                        <div class="panel theDescription" ng-show="panel.isSelected(1)">
                             <p>{{big.getAppDescription(appClickNum)}}</p>
                         </div>
-                        <div class="panel" ng-show="panel.isSelected(2)">
-                            <p>{{big.getAppFeatures(appClickNum)}}</p>
+
+                        <div class="panel theFeatures" ng-show="panel.isSelected(2)">
+                            <p>Here are the awesome features:</p>
+                            <div ng-repeat='my1feature in stuff'>
+                                {{big.getAppFeatures(appClickNum)[$index]}}
+                            </div>
                         </div>
-                        <div class="panel" ng-show="panel.isSelected(3)">
-                            <p>{{big.getAppTechnology(appClickNum)}}</p>
+
+                        <div class="panel theTechnology" ng-show="panel.isSelected(3)">
+                            <p>Here are the technologies used:</p>
+                            <div ng-repeat='my1technology in stuff'>
+                                {{big.getAppTechnology(appClickNum)[$index]}}
+                            </div>
                         </div>
                     </section>
 
@@ -124,30 +132,6 @@
                             <img id='peaches' ng-src="{{big.getAppImage($index)}}" />{{big.getAppName($index)}}
                         </div>
                     </div>
-                    <!-- <div class="row main"  ng-click="big.appClickNum = 0">
-                        <img id='peaches' ng-src="{{big.getAppImage(0)}}" />{{big.getAppName(0)}}
-                    </div>
-
-                    <div class="row main" ng-click="big.appClickNum = 1">
-                        <img id='peaches' ng-src="{{big.getAppImage(1)}}" />{{big.getAppName(1)}}
-                    </div>
-
-                    <div class="row main" ng-click="big.appClickNum = 2">
-                        <img id='peaches' ng-src= "{{big.getAppImage(2)}}"/>{{big.getAppName(2)}}
-                    </div>
-
-                    <div class="row main" ng-click="big.appClickNum = 3">
-                        <img id='peaches' ng-src= "{{big.getAppImage(3)}}"/>{{big.getAppName(3)}}
-                    </div>
-
-                    <div class="row main" ng-click="big.appClickNum = 4">
-                        <img id='peaches' ng-src="{{big.getAppImage(4)}}" />{{big.getAppName(4)}}
-                    </div>
-
-                    <div class="row main" ng-click="big.appClickNum = 5">
-                        <img id='peaches' ng-src="{{big.getAppImage(5)}}" />{{big.getAppName(5)}}
-                    </div>
- -->
                 </div>
 
           </div>
