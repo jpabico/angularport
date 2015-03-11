@@ -37,8 +37,8 @@ html body {
         }
 
         #instructions {
-            font-size: 15px;
-            color: green;
+            font-size: 25px;
+            color: antiquewhite;
             text-align: center;
         }
 
@@ -53,12 +53,20 @@ html body {
         }*/
 
         .col-md-3 {
-            border:solid pink;
+            border:solid antiquewhite;
+            border-radius: 10px;
             margin-top: 25px;
             margin-left: 10px;
             /*LightSkyBlue*/
             /*background-color: #87CEFA;*/
-            background-color: #E0FFFF;
+            /*background-color: #E0FFFF;*/
+            /*background-color: #000028;*/
+            /*background-color: ;*/
+            color: antiquewhite;
+            /*brown*/
+            /*background-color: #3D2914;*/
+            /*opacity: 0.5;*/
+            /*background-color: #000025;*/
         }
 
         .thumbnails  .row {
@@ -70,28 +78,37 @@ html body {
        }
 
          .col-md-8 {
-            border:solid red;
+            border:solid antiquewhite;
+            border-radius: 10px;
             padding: 25px;
             margin-top: 25px;
             /*LightSkyBlue*/
             /*background-color: #87CEFA;*/
-            background-color: lightblue;
+            /*background-color: #FFFFF0;*/
+            /*background-color: #000028;*/
+            /*background-color: #000025;*/
+            /*opacity: 0.8;*/
         }
 
         .col-md-12 {
-            border:solid green;
+            /*border:solid navy;*/
+            border-radius: 10px;
+            /*border-width: 5px;*/
             padding: 15px;
             margin: 30px;
-            background-color: white;
+            /*background-color: grey;*/
         }
 
         .main-pic-container {
-            border: solid black;
-            height: 80%;
+            /*border: solid black;*/
+            /*height: 80%;*/
         }
 
         .main-pic {
-            border: solid purple;
+            border: solid #000030;
+            border-radius: 10px;
+            border-width: 10px;
+            /*border-width: 8px;*/
             width: auto;
         }
 
@@ -107,20 +124,33 @@ html body {
         h2.visitors {
             text-align: center;
             vertical-align: text-top;
+            text-decoration:none;
+        }
+
+        h2.visitors a {
+            color: antiquewhite;
+            width: 50%;
         }
 
         h2.visitors a:hover , .visitme:hover {
-            color: white;
-            background-color: navy;
+            color: navy;
+            text-decoration: none;
+            background-color: antiquewhite;
         }
 
     div.panel {
-        border: solid purple;
+        /*border: solid purple;*/
         height: 200px;
         padding: 10px;
+        border: solid #000030;
+        border-radius: 10px;
+        border-width: 10px;
     }
 
     .selected {
-        border: solid red;
+        border: solid deepskyblue;
+        border-width: 5px;
+        border-radius: 10px;
+        background-color: #FFFFF0;
+        color: #3D2914;
     }
-       /*color MintCream #F5FFFA*/
