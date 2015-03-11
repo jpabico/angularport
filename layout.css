@@ -1,6 +1,6 @@
 html body {
-            /*background-image: url('images/marioland_background.jpg');*/
-            background:  antiquewhite;
+            background-image: url('../../../Desktop/piano_b_w.jpg');
+            /*background:  antiquewhite;*/
         }
 
         .main {
@@ -15,6 +15,10 @@ html body {
             font-size: 48px;
             text-align: center;
             text-decoration: none;
+            color:antiquewhite;
+            font-family: 'Droid Sans', serif;
+            font-size: 48px;
+            text-shadow: 4px 4px 4px #aaa;
         }
 
         #jon:hover {
@@ -28,7 +32,7 @@ html body {
         }
 
         #cv {
-            font-size: 12px;
+            font-size: 15px;
             text-decoration: none;
         }
 
@@ -96,10 +100,10 @@ html body {
             height: auto;
         }
 
-        .myheading {
+       /* .myheading {
             border: solid orange;
         }
-
+*/
         h2.visitors {
             text-align: center;
             vertical-align: text-top;
