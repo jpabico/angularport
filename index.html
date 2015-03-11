@@ -32,11 +32,11 @@
     <div class='container'>
 
         <div class="row main">
-            <div class="myheading">
+            <div class="myheading col-md-11">
                 <h1 id='jon'>
                     <a href="http://jpabico.github.io/Pabico_CV_2015.pdf" target="_blank">
                         Jon Pabico
-                        <footer id='title'>Full-Stack Web Developer  |  Resume / Contact Info</footer>
+                        <footer id='title'>Full-Stack Web Developer</footer>
                         <footer id='cv'>CV / Resume / Contact Info</footer>
                     </a>
                 </h1>
@@ -127,7 +127,7 @@
 
                 <!-- thumbnails for each app - all are sized 1280 x 800-->
                 <div class='thumbnails' ng-controller='GalleryController as gallery'>
-                    <div ng-repeat ="my1stuff in stuff">
+                    <div ng-repeat ="my1stuff in stuff" ng-class="{'selected':$index == appClickNum}">
                        <div class="row main"  ng-click="big.setAppClickNum($index)">
                             <img id='peaches' ng-src="{{big.getAppImage($index)}}" />{{big.getAppName($index)}}
                         </div>
@@ -148,7 +148,5 @@
 
 <!-- things to do -->
 
-<!-- highlight currently active app in gallery -->
-<!-- refactor controllers ...some things are not categorized properly -->
 <!-- move data (myAppsInfo) to firebase ...reference angular course-->
 <!-- host on firebase or github? -->

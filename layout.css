@@ -8,8 +8,12 @@ html body {
         }
 
         #jon {
+            text-align: center;
+        }
+
+        #jon a {
             font-size: 48px;
-            text-align: left;
+            text-align: center;
             text-decoration: none;
         }
 
@@ -54,10 +58,11 @@ html body {
         }
 
         .thumbnails  .row {
-            border: solid yellow; 
+            /*border: solid yellow; */
             margin: 10px auto;
-            padding: 10px;
-            background-color:white;
+            /*padding: 10px;*/
+            /*background-color:white;*/
+            text-align:center;
        }
 
          .col-md-8 {
@@ -111,5 +116,7 @@ html body {
         padding: 10px;
     }
 
-       
+    .selected {
+        border: solid red;
+    }
        /*color MintCream #F5FFFA*/
