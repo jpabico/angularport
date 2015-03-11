@@ -1,31 +1,40 @@
 var app = angular.module("myapp", [])
     
     app.controller("BigController", function($scope) {
-        this.stuff = myAppsInfo;
-        this.appClickNum = 0;
+        $scope.stuff = myAppsInfo;
+        $scope.appClickNum = 0;
+
+        this.setAppClickNum = function(appIndex) {
+            return $scope.appClickNum = appIndex;
+        };
+
+        this.getAppImageMain = function(appIndex) {
+            // PanelController.testing(3);
+            return $scope.stuff[appIndex].images[0];
+        };
 
         this.getAppImage = function(appIndex) {
-            return this.stuff[appIndex].images[0];
+            return $scope.stuff[appIndex].images[0];
         };
 
         this.getAppName = function(appIndex) {
-            return this.stuff[appIndex].name;
+            return $scope.stuff[appIndex].name;
         };
 
         this.getAppDescription = function(appIndex) {
-            return this.stuff[appIndex].description_text;
+            return $scope.stuff[appIndex].description_text;
         };
 
         this.getAppFeatures = function(appIndex) {
-            return this.stuff[appIndex].features_text;
+            return $scope.stuff[appIndex].features_text;
         };
 
         this.getAppTechnology = function(appIndex) {
-            return this.stuff[appIndex].technology_text;
+            return $scope.stuff[appIndex].technology_text;
         };
 
         this.getAppUrl = function(appIndex) {
-            return this.stuff[appIndex].url;
+            return $scope.stuff[appIndex].url;
         };
 
     });
@@ -41,6 +50,10 @@ var app = angular.module("myapp", [])
             return this.tab === checkTab
         };
 
+        // this.testing = function(number) {
+        //     console.log(number)
+        // }
+
     } );
     
     app.controller("GalleryController", function($scope) {
@@ -52,10 +65,10 @@ var app = angular.module("myapp", [])
 
     var myAppsInfo = [
         {
-            name: "modified Wait and Eat", 
-            images: ['../../Desktop/my_portfolio/jpabico.github.io/images/quest_pic.jpg'],
-            description_text: " ",
-            features_text: " ",
+            name: "Wait and Eat", 
+            images: ['images/resz_quest_pic.jpg'],
+            description_text: " placeholder for now",
+            features_text: [" "],
             technology_text: ["Javascript", "Angular.js", "jQuery/AJAX", "HTML5", "CSS3", "APIs (Firebase, Twilio, Zapier)"],
             url: "http://google.com"
         }, 

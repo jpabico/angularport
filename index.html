@@ -30,6 +30,19 @@
   <body ng-controller='BigController as big'>
 
     <div class='container'>
+
+        <div class="row main">
+            <div class="myheading">
+                <h1 id='jon'>
+                    <a href="http://jpabico.github.io/Pabico_CV_2015.pdf" target="_blank">
+                        Jon Pabico
+                        <footer id='title'>Full-Stack Web Developer  |  Resume / Contact Info</footer>
+                        <footer id='cv'>CV / Resume / Contact Info</footer>
+                    </a>
+                </h1>
+            </div>
+        </div>
+
         <div class="row main">
           
           <!-- start of left-hand column -->
@@ -38,7 +51,7 @@
                 <!-- screenshot of active app -->
                 <div class='main-pic-container'>
                     <div class='main-pic'>
-                        <img id='peaches' ng-src='{{big.getAppImage(big.appClickNum)}}' />
+                        <img id='peaches' ng-src='{{big.getAppImage(appClickNum)}}' />
                     </div>
                 </div>
 
@@ -49,8 +62,8 @@
                     <!-- link to active app -->
                     <div class='visitme'>
                         <h2 class='visitors'>
-                            <a href="{{big.getAppUrl(big.appClickNum)}}">
-                                <p>{{big.getAppName(big.appClickNum)}}</p>
+                            <a href="{{big.getAppUrl(appClickNum)}}">
+                                <p>{{big.getAppName(appClickNum)}}</p>
                             </a>
                         </h2>
                     </div>
@@ -71,14 +84,22 @@
                         </ul>
                         <br/>
                         <!-- panes -->
-                        <div class="panel" ng-show="panel.isSelected(1)">
-                            <p>{{big.getAppDescription(big.appClickNum)}}</p>
+                        <div class="panel theDescription" ng-show="panel.isSelected(1)">
+                            <p>{{big.getAppDescription(appClickNum)}}</p>
                         </div>
-                        <div class="panel" ng-show="panel.isSelected(2)">
-                            <p>{{big.getAppFeatures(big.appClickNum)}}</p>
+
+                        <div class="panel theFeatures" ng-show="panel.isSelected(2)">
+                            <p>Here are the awesome features:</p>
+                            <div ng-repeat='my1feature in stuff'>
+                                {{big.getAppFeatures(appClickNum)[$index]}}
+                            </div>
                         </div>
-                        <div class="panel" ng-show="panel.isSelected(3)">
-                            <p>{{big.getAppTechnology(big.appClickNum)}}</p>
+
+                        <div class="panel theTechnology" ng-show="panel.isSelected(3)">
+                            <p>Here are the technologies used:</p>
+                            <div ng-repeat='my1technology in stuff'>
+                                {{big.getAppTechnology(appClickNum)[$index]}}
+                            </div>
                         </div>
                     </section>
 
@@ -93,32 +114,23 @@
           <div class="col-md-3">
 
                 <!-- name and heading -->
-                <div class='myheading'>
-                    <h1 id='jon'>
+                <!-- <div class='myheading'> -->
+                    <!-- <h1 id='jon'>
                         <a href="http://jpabico.github.io/Pabico_CV_2015.pdf" target="_blank">
                             Jon Pabico
                             <footer id='title'>Full-Stack Web Developer</footer>
                             <footer id='cv'>CV / Resume / Contact Info</footer>
                         </a>
-                    </h1>
-                    <h2 id='instructions'>Click on a thumbnail for more info</h2>
-                </div>
+                    </h1> -->
+                    <h2 id='instructions'>Explore!</h2>
+                <!-- </div> -->
 
                 <!-- thumbnails for each app - all are sized 1280 x 800-->
                 <div class='thumbnails' ng-controller='GalleryController as gallery'>
-                    <div class="row main" >
-                        <div class="col-md-5" ng-click="big.appClickNum = 0"><img id='peaches' ng-src="{{big.getAppImage(0)}}" />img1</div>
-                        <div class="col-md-5" ng-click="big.appClickNum = 1"><img id='peaches' ng-src="{{big.getAppImage(1)}}" />img2</div>
-                    </div>
-
-                    <div class="row main">
-                        <div class="col-md-5" ng-click="big.appClickNum = 2"><img id='peaches' ng-src= "{{big.getAppImage(2)}}"/>img3</div>
-                        <div class="col-md-6" ng-click="big.appClickNum = 3"><img id='peaches' ng-src="{{big.getAppImage(3)}}" />img4</div>
-                    </div>
-
-                    <div class="row main">
-                        <div class="col-md-5" ng-click="big.appClickNum = 4"><img id='peaches' ng-src="{{big.getAppImage(4)}}" />img5</div>
-                        <div class="col-md-5" ng-click="big.appClickNum = 5"><img id='peaches' ng-src="{{big.getAppImage(5)}}" />img6</div>
+                    <div ng-repeat ="my1stuff in stuff">
+                       <div class="row main"  ng-click="big.setAppClickNum($index)">
+                            <img id='peaches' ng-src="{{big.getAppImage($index)}}" />{{big.getAppName($index)}}
+                        </div>
                     </div>
                 </div>
 
@@ -137,10 +149,6 @@
 <!-- things to do -->
 
 <!-- highlight currently active app in gallery -->
-<!-- fill in div with color -->
-<!-- fix size of tab panels (by height?) -->
 <!-- refactor controllers ...some things are not categorized properly -->
-<!-- make sure all images are the same size -->
-<!-- contact section should have link to resume  -->
 <!-- move data (myAppsInfo) to firebase ...reference angular course-->
 <!-- host on firebase or github? -->
