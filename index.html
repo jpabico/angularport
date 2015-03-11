@@ -51,7 +51,7 @@
                 <!-- screenshot of active app -->
                 <div class='main-pic-container'>
                     <div class='main-pic'>
-                        <img id='peaches' ng-src='{{big.getAppImage(big.appClickNum)}}' />
+                        <img id='peaches' ng-src='{{big.getAppImage(appClickNum)}}' />
                     </div>
                 </div>
 
@@ -62,8 +62,8 @@
                     <!-- link to active app -->
                     <div class='visitme'>
                         <h2 class='visitors'>
-                            <a href="{{big.getAppUrl(big.appClickNum)}}">
-                                <p>{{big.getAppName(big.appClickNum)}}</p>
+                            <a href="{{big.getAppUrl(appClickNum)}}">
+                                <p>{{big.getAppName(appClickNum)}}</p>
                             </a>
                         </h2>
                     </div>
@@ -85,13 +85,13 @@
                         <br/>
                         <!-- panes -->
                         <div class="panel" ng-show="panel.isSelected(1)">
-                            <p>{{big.getAppDescription(big.appClickNum)}}</p>
+                            <p>{{big.getAppDescription(appClickNum)}}</p>
                         </div>
                         <div class="panel" ng-show="panel.isSelected(2)">
-                            <p>{{big.getAppFeatures(big.appClickNum)}}</p>
+                            <p>{{big.getAppFeatures(appClickNum)}}</p>
                         </div>
                         <div class="panel" ng-show="panel.isSelected(3)">
-                            <p>{{big.getAppTechnology(big.appClickNum)}}</p>
+                            <p>{{big.getAppTechnology(appClickNum)}}</p>
                         </div>
                     </section>
 
@@ -119,8 +119,12 @@
 
                 <!-- thumbnails for each app - all are sized 1280 x 800-->
                 <div class='thumbnails' ng-controller='GalleryController as gallery'>
-
-                    <div class="row main"  ng-click="big.appClickNum = 0">
+                    <div ng-repeat ="my1stuff in stuff">
+                       <div class="row main"  ng-click="big.setAppClickNum($index)">
+                            <img id='peaches' ng-src="{{big.getAppImage($index)}}" />{{big.getAppName($index)}}
+                        </div>
+                    </div>
+                    <!-- <div class="row main"  ng-click="big.appClickNum = 0">
                         <img id='peaches' ng-src="{{big.getAppImage(0)}}" />{{big.getAppName(0)}}
                     </div>
 
@@ -143,7 +147,7 @@
                     <div class="row main" ng-click="big.appClickNum = 5">
                         <img id='peaches' ng-src="{{big.getAppImage(5)}}" />{{big.getAppName(5)}}
                     </div>
-
+ -->
                 </div>
 
           </div>
@@ -161,10 +165,6 @@
 <!-- things to do -->
 
 <!-- highlight currently active app in gallery -->
-<!-- fill in div with color -->
-<!-- fix size of tab panels (by height?) -->
 <!-- refactor controllers ...some things are not categorized properly -->
-<!-- make sure all images are the same size -->
-<!-- contact section should have link to resume  -->
 <!-- move data (myAppsInfo) to firebase ...reference angular course-->
 <!-- host on firebase or github? -->
