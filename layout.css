@@ -1,143 +1,86 @@
-html body {
-            background-image: url('../../../Desktop/piano_b_w.jpg');
-            /*background:  antiquewhite;*/
-        }
+    html body {
+        background-image: url('../../../Desktop/piano_b_w.jpg');
+    }
 
-        .main {
-            width: 95%;
-        }
+    /*all images*/
+    .container img {
+        width: 100%;
+        height: auto;
+    }
 
-        #jon {
-            text-align: center;
-        }
+    .main {
+        width: 95%;
+    }
 
-        #jon a {
-            font-size: 48px;
-            text-align: center;
-            text-decoration: none;
-            color:antiquewhite;
-            font-family: 'Droid Sans', serif;
-            font-size: 48px;
-            text-shadow: 4px 4px 4px #aaa;
-        }
+    /*name*/
+    #jon {
+        text-align: center;
+    }
 
-        #jon:hover {
-            color: black;            
-            text-decoration: none;
-        }
+    #jon a {
+        font-size: 48px;
+        text-align: center;
+        text-decoration: none;
+        color:antiquewhite;
+        font-family: 'Droid Sans', serif;
+        font-size: 48px;
+        text-shadow: 4px 4px 4px #aaa;
+    }
 
-        #title {
-            font-size: 20px;
-            text-decoration: none;
-        }
+    #jon:hover {
+        color: black;            
+        text-decoration: none;
+    }
 
-        #cv {
-            font-size: 15px;
-            text-decoration: none;
-        }
+    /*position title*/
+    #title {
+        font-size: 20px;
+    }
 
-        #instructions {
-            font-size: 25px;
-            color: antiquewhite;
-            text-align: center;
-        }
+    /*contact info*/
+    #cv {
+        font-size: 15px;
+    }
 
+    /*left-hand column*/
+    .col-md-8 {
+        border: solid antiquewhite;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 25px;
+    }
 
-        /*temporarily removed div inside yellow*/
-/*
-        .col-md-5 {
-            border: solid blue;
-            height: 90%;
-            padding: 10px;
-            background-color:white;
-        }*/
+    /*active app image*/
+    .main-pic {
+        border: solid #000030;
+        border-radius: 10px;
+        border-width: 10px;
+        width: auto;
+    }
 
-        .col-md-3 {
-            border:solid antiquewhite;
-            border-radius: 10px;
-            margin-top: 25px;
-            margin-left: 10px;
-            /*LightSkyBlue*/
-            /*background-color: #87CEFA;*/
-            /*background-color: #E0FFFF;*/
-            /*background-color: #000028;*/
-            /*background-color: ;*/
-            color: antiquewhite;
-            /*brown*/
-            /*background-color: #3D2914;*/
-            /*opacity: 0.5;*/
-            /*background-color: #000025;*/
-        }
+    /*title tab panel window section*/
+    .col-md-12 {
+        border-radius: 10px;
+        padding: 15px;
+        margin: 30px;
+    }
 
-        .thumbnails  .row {
-            /*border: solid yellow; */
-            margin: 10px auto;
-            /*padding: 10px;*/
-            /*background-color:white;*/
-            text-align:center;
-       }
+    /*app title*/
+    h2.visitors a {
+        text-align: center;
+        color: antiquewhite;
+        width: 50%;
+    }
 
-         .col-md-8 {
-            border:solid antiquewhite;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 25px;
-            /*LightSkyBlue*/
-            /*background-color: #87CEFA;*/
-            /*background-color: #FFFFF0;*/
-            /*background-color: #000028;*/
-            /*background-color: #000025;*/
-            /*opacity: 0.8;*/
-        }
+    /*app title hover*/
+    h2.visitors a:hover , .visitme:hover {
+        color: navy;
+        text-decoration: none;
+        background-color: antiquewhite;
+        border-radius: 5px;
+    }
 
-        .col-md-12 {
-            /*border:solid navy;*/
-            border-radius: 10px;
-            /*border-width: 5px;*/
-            padding: 15px;
-            margin: 30px;
-            /*background-color: grey;*/
-        }
-
-        .main-pic-container {
-            /*border: solid black;*/
-            /*height: 80%;*/
-        }
-
-        .main-pic {
-            border: solid #000030;
-            border-radius: 10px;
-            border-width: 10px;
-            /*border-width: 8px;*/
-            width: auto;
-        }
-
-        .container img {
-            width: 100%;
-            height: auto;
-        }
-
-       /* .myheading {
-            border: solid orange;
-        }
-*/
-        h2.visitors {
-            text-align: center;
-            vertical-align: text-top;
-            text-decoration:none;
-        }
-
-        h2.visitors a {
-            color: antiquewhite;
-            width: 50%;
-        }
-
-        h2.visitors a:hover , .visitme:hover {
-            color: navy;
-            text-decoration: none;
-            background-color: antiquewhite;
-        }
-
+    /*tab panel windows*/
     div.panel {
         /*border: solid purple;*/
         height: 200px;
@@ -147,9 +90,34 @@ html body {
         border-width: 10px;
     }
 
+    /*right-hand column*/
+    .col-md-3 {
+        border:solid antiquewhite;
+        border-radius: 10px;
+        margin-top: 25px;
+        margin-left: 10px;
+        color: antiquewhite;
+    }
+
+    /*label for thumbnail column*/
+    #instructions {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    /*thumbnails*/
+    .thumbnails  .row {
+        /*border: solid yellow; */
+        margin: 20px auto;
+        /*padding: 10px;*/
+        /*background-color:white;*/
+        text-align:center;
+   }
+
+    /*selection box*/
     .selected {
-        border: solid deepskyblue;
-        border-width: 5px;
+        border: solid blue;
+        border-width: 7px;
         border-radius: 10px;
         background-color: #FFFFF0;
         color: #3D2914;
