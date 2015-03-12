@@ -92,7 +92,8 @@
                         <div class="panel theFeatures" ng-show="panel.isSelected(2)">
                             <p>Here are the awesome features:</p>
                             <div ng-repeat='my1feature in stuff'>
-                                {{big.getAppFeatures(appClickNum)[$index]}}
+                                <!-- <p>{{big.getAppFeatures(appClickNum)[$index]}}</p> -->
+                                <p ng-bind-html="testhtml | to_trusted"></p>
                             </div>
                         </div>
 
