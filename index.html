@@ -52,7 +52,7 @@
                 <!-- screenshot of active app -->
                 <div class='main-pic-container'>
                     <div class='main-pic'>
-                        <img id='peaches' ng-src='{{big.getAppImage(appClickNum)}}' />
+                        <img ng-src='{{big.getAppImage(appClickNum)}}' />
                     </div>
                 </div>
 
@@ -113,24 +113,15 @@
 
           <!-- start of right-hand column -->
           <div class="col-md-3">
-
-                <!-- name and heading -->
-                <!-- <div class='myheading'> -->
-                    <!-- <h1 id='jon'>
-                        <a href="http://jpabico.github.io/Pabico_CV_2015.pdf" target="_blank">
-                            Jon Pabico
-                            <footer id='title'>Full-Stack Web Developer</footer>
-                            <footer id='cv'>CV / Resume / Contact Info</footer>
-                        </a>
-                    </h1> -->
-                    <h2 id='instructions'> Explore! </h2>
-                <!-- </div> -->
+                    
+                <h2 id='instructions'> Explore! </h2>
 
                 <!-- thumbnails for each app - all are sized 1280 x 800-->
                 <div class='thumbnails' ng-controller='GalleryController as gallery'>
                     <div ng-repeat ="my1stuff in stuff" ng-class="{'selected':$index == appClickNum}">
                        <div class="row main"  ng-click="big.setAppClickNum($index)">
-                            <img id='peaches' ng-src="{{big.getAppImage($index)}}" />{{big.getAppName($index)}}
+                            <img ng-src="{{big.getAppImage($index)}}" />
+                            <p id= 'image_name'>{{big.getAppName($index)}}</p>
                         </div>
                     </div>
                 </div>
