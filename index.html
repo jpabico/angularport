@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="panel theTechnology" ng-show="panel.isSelected(3)">
-                            <p>Here are the technologies used:</p>
+                            <p>Technologies used for {{big.getAppName(appClickNum)}} include:</p>
                             <div ng-repeat='my1technology in stuff'>
                                 {{big.getAppTechnology(appClickNum)[$index]}}
                             </div>

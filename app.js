@@ -125,11 +125,11 @@ var app = angular.module("myapp", []);
 
      var myAppsInfo = [
         {
-            name: "Wait List", 
-            images: ['images/resz_quest_pic.jpg'],
-            description_text: " placeholder for now",
-            features_text: '<ul>here is list #1<li>item 1</li><li>item2</li><li>item3</li></ul><p>done with list</p>',
-            technology_text: ["- Javascript", "- Angular.js", "- jQuery/AJAX", "- HTML5", "- CSS3", "- APIs (Firebase, Twilio, Zapier)"],
+            name: "Patient Pager", 
+            images: ['images/resz_patient_pager.jpg'],
+            description_text: "jkjkjkj",
+            features_text: ["- Sending text messages with the push of a button to notify patients that the doctor is ready", "- Easily adding/removing patents from the list", "- Customizing the messages sent to patients"],
+            technology_text: ["- Angular.js", "- Javascript", "- jQuery/AJAX", "- HTML5", "- CSS3", "- APIs (Firebase, Twilio, Zapier)"],
             url: "http://google.com"
         }, 
         {
