@@ -92,6 +92,10 @@
         overflow: scroll;
     }
 
+    #copyright {
+        color: gray;
+    }
+
     /*right-hand column*/
     .col-md-3 {
         border:solid antiquewhite;
