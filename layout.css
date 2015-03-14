@@ -88,6 +88,7 @@
         border: solid #000030;
         border-radius: 10px;
         border-width: 10px;
+        overflow: scroll;
     }
 
     /*right-hand column*/
@@ -110,6 +111,7 @@
     .thumbnails  .row {
         margin: 15px auto;
         font-family: 'Droid Sans', serif;
+        padding: 17px;
    }
 
    #image_name {

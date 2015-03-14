@@ -90,10 +90,11 @@
                         </div>
 
                         <div class="panel theFeatures" ng-show="panel.isSelected(2)">
-                            <p>Here are the awesome features:</p>
+                            <p>Features for {{big.getAppName(appClickNum)}} include:</p>
                             <div ng-repeat='my1feature in stuff'>
                                 <!-- <p>{{big.getAppFeatures(appClickNum)[$index]}}</p> -->
-                                <p ng-bind-html="testhtml | to_trusted"></p>
+                                <!-- <p ng-bind-html="testhtml | to_trusted"></p> -->
+                                <p ng-bind-html="big.getAppFeatures(appClickNum)[$index] | to_trusted"></p>
                             </div>
                         </div>
 
@@ -140,6 +141,8 @@
 </html>
 
 <!-- things to do -->
-
+<!-- hover on title to show url -->
+<!-- overflow scroll should be added to panel window -->
+<!-- features text and technology text htmls need to be written -->
 <!-- move data (myAppsInfo) to firebase ...reference angular course-->
 <!-- host on firebase or github? -->
