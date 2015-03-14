@@ -86,12 +86,12 @@
                         <br/>
                         <!-- panes -->
                         <div class="panel theDescription" ng-show="panel.isSelected(1)">
-                            <p>{{big.getAppDescription(appClickNum)}}</p>
+                            <p>&nbsp&nbsp&nbsp{{big.getAppDescription(appClickNum)}}</p>
                         </div>
 
                         <div class="panel theFeatures" ng-show="panel.isSelected(2)">
                             <p>Features for {{big.getAppName(appClickNum)}} include:</p>
-                            <div ng-repeat='my1feature in stuff'>
+                            <div ng-repeat='my1feature in stuff[appClickNum].features_text'>
                                 <!-- <p>{{big.getAppFeatures(appClickNum)[$index]}}</p> -->
                                 <!-- <p ng-bind-html="testhtml | to_trusted"></p> -->
                                 <p ng-bind-html="big.getAppFeatures(appClickNum)[$index] | to_trusted"></p>
@@ -100,7 +100,7 @@
 
                         <div class="panel theTechnology" ng-show="panel.isSelected(3)">
                             <p>Technologies used for {{big.getAppName(appClickNum)}} include:</p>
-                            <div ng-repeat='my1technology in stuff'>
+                            <div ng-repeat='my1technology in stuff[appClickNum].technology_text'>
                                 {{big.getAppTechnology(appClickNum)[$index]}}
                             </div>
                         </div>
