@@ -92,6 +92,10 @@
         overflow: scroll;
     }
 
+    div.theDescription, div.theFeatures,  div.theTechnology {
+        font-family: 'century gothic', 'trebuchet ms', arial;
+    }
+
     #copyright {
         color: gray;
         margin-left: 40px;
