@@ -127,10 +127,10 @@ var app = angular.module("myapp", []);
         {
             name: "Patient Pager", 
             images: ['images/resz_patient_pager.jpg'],
-            description_text: "jkjkjkj",
+            description_text: "   Catering to the needs of the patients, Patient Pager gives patients the freedom to wait OUTSIDE the waiting room without fear of missing their scheduled appointment.  Families will know exactly when and where to pick up their loved ones.  And medical offices can improve patient flow by allowing the doctor to notify the next patient as soon as the doctor is ready.  No need to rush the doctor.  Everyone gets the time they deserve.  Now everyone can be a patient patient!",
             features_text: ["- Sending text messages with the push of a button to notify patients that the doctor is ready", "- Easily adding/removing patents from the list", "- Customizing the messages sent to patients"],
             technology_text: ["- Angular.js", "- Javascript", "- jQuery/AJAX", "- HTML5", "- CSS3", "- APIs (Firebase, Twilio, Zapier)"],
-            url: "http://google.com"
+            url: "https://patient-pager.firebaseapp.com"
         }, 
         {
             name: "Jury", 
